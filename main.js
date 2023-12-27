@@ -167,76 +167,100 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   NavigationComponent: () => (/* binding */ NavigationComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 1699);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 1699);
 /* harmony import */ var _service_utility_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../service/utility.service */ 2117);
+/* harmony import */ var _service_soccer_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../service/soccer.service */ 7733);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 6575);
 
 
 
+
+
+const _c0 = function (a0) {
+  return {
+    "active": a0
+  };
+};
 class NavigationComponent {
-  constructor(utilityService) {
+  constructor(utilityService, soccerService) {
     this.utilityService = utilityService;
-    this.leagueEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
+    this.soccerService = soccerService;
+    this.leagueEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_2__.EventEmitter();
   }
   /**
    * Function to pass the league id to parent component.
-   * @param event any type, Note: Tried with mouseEvent but not able to achieve so used type any.
+   * @param event Event object
    */
   getStandingDetails(event) {
-    this.leagueEmitter.emit(this.utilityService.getLeagueById(event.target.id));
+    const elementId = event.target.id;
+    this.leagueEmitter.emit(this.utilityService.getLeagueById(elementId));
   }
   static #_ = this.ɵfac = function NavigationComponent_Factory(t) {
-    return new (t || NavigationComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_service_utility_service__WEBPACK_IMPORTED_MODULE_0__.UtilityService));
+    return new (t || NavigationComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_service_utility_service__WEBPACK_IMPORTED_MODULE_0__.UtilityService), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_service_soccer_service__WEBPACK_IMPORTED_MODULE_1__.SoccerService));
   };
-  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
+  static #_2 = this.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({
     type: NavigationComponent,
     selectors: [["app-navigation"]],
     outputs: {
       leagueEmitter: "leagueEmitter"
     },
     decls: 22,
-    vars: 0,
-    consts: [[1, "navbar", "navbar-expand-lg", "navbar-light", "bg-light"], ["href", "#", 1, "navbar-brand"], ["type", "button", "data-toggle", "collapse", "data-target", "#navbarNav", "aria-controls", "navbarNav", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler"], [1, "navbar-toggler-icon"], ["id", "navbarNav", 1, "collapse", "navbar-collapse"], [1, "navbar-nav"], [1, "nav-item"], ["id", "englandSelect", 1, "nav-link", 3, "click"], ["id", "spainSelect", 1, "nav-link", 3, "click"], ["id", "franceSelect", 1, "nav-link", 3, "click"], ["id", "germanySelect", 1, "nav-link", 3, "click"], ["id", "italySelect", 1, "nav-link", 3, "click"]],
+    vars: 15,
+    consts: [[1, "navbar", "navbar-expand-lg", "navbar-light", "bg-light"], ["href", "#", 1, "navbar-brand"], ["type", "button", "data-toggle", "collapse", "data-target", "#navbarNav", "aria-controls", "navbarNav", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler"], [1, "navbar-toggler-icon"], ["id", "navbarNav", 1, "collapse", "navbar-collapse"], [1, "navbar-nav"], [1, "nav-item", 3, "ngClass"], ["id", "englandSelect", 1, "nav-link", 3, "click"], ["id", "spainSelect", 1, "nav-link", 3, "click"], ["id", "franceSelect", 1, "nav-link", 3, "click"], ["id", "germanySelect", 1, "nav-link", 3, "click"], ["id", "italySelect", 1, "nav-link", 3, "click"]],
     template: function NavigationComponent_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nav", 0)(1, "a", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Soccer Updates");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "button", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](4, "span", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "div", 4)(6, "ul", 5)(7, "li", 6)(8, "a", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NavigationComponent_Template_a_click_8_listener($event) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "nav", 0)(1, "a", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](2, "Soccer Updates");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "button", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](4, "span", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "div", 4)(6, "ul", 5)(7, "li", 6)(8, "button", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function NavigationComponent_Template_button_click_8_listener($event) {
           return ctx.getStandingDetails($event);
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](9, "England ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "li", 6)(11, "a", 8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NavigationComponent_Template_a_click_11_listener($event) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](9, "England");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](10, "li", 6)(11, "button", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function NavigationComponent_Template_button_click_11_listener($event) {
           return ctx.getStandingDetails($event);
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](12, "Spain");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "li", 6)(14, "a", 9);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NavigationComponent_Template_a_click_14_listener($event) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](12, "Spain");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](13, "li", 6)(14, "button", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function NavigationComponent_Template_button_click_14_listener($event) {
           return ctx.getStandingDetails($event);
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15, "France");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "li", 6)(17, "a", 10);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NavigationComponent_Template_a_click_17_listener($event) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](15, "France");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](16, "li", 6)(17, "button", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function NavigationComponent_Template_button_click_17_listener($event) {
           return ctx.getStandingDetails($event);
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](18, "Germany");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "li", 6)(20, "a", 11);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NavigationComponent_Template_a_click_20_listener($event) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](18, "Germany");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](19, "li", 6)(20, "button", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("click", function NavigationComponent_Template_button_click_20_listener($event) {
           return ctx.getStandingDetails($event);
         });
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](21, "Italy");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]()()()()();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](21, "Italy");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()()()();
+      }
+      if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](5, _c0, ctx.soccerService.selectedLeague === 39));
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](7, _c0, ctx.soccerService.selectedLeague === 140));
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](9, _c0, ctx.soccerService.selectedLeague === 61));
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](11, _c0, ctx.soccerService.selectedLeague === 78));
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction1"](13, _c0, ctx.soccerService.selectedLeague === 135));
       }
     },
-    styles: ["\n\n.nav-item.active[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  color: blue;\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbmF2aWdhdGlvbi9uYXZpZ2F0aW9uLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsaUJBQWlCO0FBQ2pCO0VBQ0UsV0FBVztBQUNiIiwic291cmNlc0NvbnRlbnQiOlsiLyogQWN0aXZlIHN0YXRlICovXHJcbi5uYXYtaXRlbS5hY3RpdmUgYSB7XHJcbiAgY29sb3I6IGJsdWU7XHJcbn0iXSwic291cmNlUm9vdCI6IiJ9 */"]
+    dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgClass],
+    styles: ["\n\n.nav-item.active[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  color: rgb(230, 3, 3);\n}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9hcHAvbmF2aWdhdGlvbi9uYXZpZ2F0aW9uLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsaUJBQWlCO0FBQ2pCO0VBQ0UscUJBQXFCO0FBQ3ZCIiwic291cmNlc0NvbnRlbnQiOlsiLyogQWN0aXZlIHN0YXRlICovXHJcbi5uYXYtaXRlbS5hY3RpdmUgYnV0dG9uIHtcclxuICBjb2xvcjogcmdiKDIzMCwgMywgMyk7XHJcbn0iXSwic291cmNlUm9vdCI6IiJ9 */"]
   });
 }
 
@@ -327,7 +351,7 @@ class ResultsComponent {
     selectors: [["app-results"]],
     decls: 15,
     vars: 3,
-    consts: [[1, "container", 2, "margin-top", "5%"], [1, "table", "table-striped"], ["scope", "col"], [4, "ngFor", "ngForOf"], [1, "btn", "btn-primary", 3, "routerLink"], ["height", "25px", "width", "25px", 3, "src"]],
+    consts: [[1, "container", 2, "margin-top", "5%"], [1, "table", "table-striped"], ["scope", "col"], [4, "ngFor", "ngForOf"], [1, "btn", "btn-primary", 3, "routerLink"], ["alt", "", "height", "25px", "width", "25px", 3, "src"]],
     template: function ResultsComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0)(1, "table", 1)(2, "thead")(3, "tr");
@@ -393,7 +417,7 @@ class CacheService {
    * @returns IStanding Data for the league
    */
   getCachedData(leagueID) {
-    let data = JSON.parse(localStorage.getItem('standings'));
+    const data = JSON.parse(localStorage.getItem('standings'));
     return data.league[leagueID];
   }
   /**
@@ -402,8 +426,8 @@ class CacheService {
    * @returns boolean based on whether the league is present in localstorage or not
    */
   isCached(leagueID) {
-    let data = JSON.parse(localStorage.getItem('standings'));
-    return  true ? data?.league?.hasOwnProperty([leagueID]) : 0;
+    const data = JSON.parse(localStorage.getItem('standings'));
+    return data !== null ? !!Object.getOwnPropertyDescriptor(data?.league, [leagueID].toString()) : false;
   }
   static #_ = this.ɵfac = function CacheService_Factory(t) {
     return new (t || CacheService)();
@@ -459,25 +483,25 @@ class SoccerService {
     } else {
       return this.http.get(`${this.credentials.baseUrl}standings?league=${leagueId}&season=${new Date().getFullYear()}`, {
         headers: this.getHeaders()
-      }).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.map)(x => {
-        const data = {
-          league: x.response[0].league.standings[0].map(y => {
+      }).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.map)(standingResponse => {
+        const stadingModifiedData = {
+          league: standingResponse.response ? standingResponse.response[0].league?.standings[0].map(standing => {
             const league = {
-              logo: y.team.logo,
-              name: y.team.name,
-              games: y.all.played,
-              win: y.all.win,
-              lose: y.all.lose,
-              draw: y.all.draw,
-              goalDifference: y.goalsDiff,
-              points: y.points,
-              teamID: y.team.id
+              logo: standing.team.logo,
+              name: standing.team.name,
+              games: standing.all.played,
+              win: standing.all.win,
+              lose: standing.all.lose,
+              draw: standing.all.draw,
+              goalDifference: standing.goalsDiff,
+              points: standing.points,
+              teamID: standing.team.id
             };
             return league;
-          })
+          }) : []
         };
-        this.cacheService.setCacheData(leagueId, data);
-        return data;
+        this.cacheService.setCacheData(leagueId, stadingModifiedData);
+        return stadingModifiedData;
       }));
     }
   }
@@ -501,8 +525,8 @@ class SoccerService {
   getFixtures(teamID, leagueID) {
     return this.http.get(`${this.credentials.baseUrl}fixtures?team=${teamID}&league=${leagueID}&season=${new Date().getFullYear()}`, {
       headers: this.getHeaders()
-    }).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.map)(r => {
-      const result = r.response.map(fixture => {
+    }).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.map)(fixtureResponse => {
+      const result = fixtureResponse.response ? fixtureResponse?.response.map(fixture => {
         const homeObj = {
           home: {
             logo: fixture.teams.home.logo,
@@ -516,7 +540,7 @@ class SoccerService {
           }
         };
         return homeObj;
-      });
+      }) : [];
       return result;
     }));
   }
@@ -547,7 +571,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class UtilityService {
-  constructor() {}
   /**
    * Function to get league id
    * @param id string
@@ -572,7 +595,6 @@ class UtilityService {
         tempID = _Models_soccer_models__WEBPACK_IMPORTED_MODULE_0__.SoccerLeadID.Italy;
         break;
     }
-    ;
     return tempID;
   }
   static #_ = this.ɵfac = function UtilityService_Factory(t) {
@@ -681,7 +703,7 @@ class SoccerDashboardComponent {
   }
   ngOnInit() {
     this.soccerService.selectedLeague = this.soccerService.selectedLeague === 0 ? this.soccerService.selectedLeague = _Models_soccer_models__WEBPACK_IMPORTED_MODULE_0__.SoccerLeadID.England : this.soccerService.selectedLeague;
-    let standingSub = this.soccerService.getStandings(this.soccerService.selectedLeague).subscribe(data => {
+    const standingSub = this.soccerService.getStandings(this.soccerService.selectedLeague).subscribe(data => {
       this.standings = data;
     });
     this.subscriptions.push(standingSub);
@@ -698,7 +720,7 @@ class SoccerDashboardComponent {
    * @param id  is league id in number format
    */
   updateleagueValue(id) {
-    let standingSub = this.soccerService.getStandings(id).subscribe(data => {
+    const standingSub = this.soccerService.getStandings(id).subscribe(data => {
       this.soccerService.selectedLeague = id;
       this.standings = data;
     });
@@ -717,7 +739,7 @@ class SoccerDashboardComponent {
     selectors: [["app-soccer-dashboard"]],
     decls: 23,
     vars: 1,
-    consts: [[1, "container"], [3, "leagueEmitter"], [1, "table", "table-striped"], ["scope", "col"], [3, "click", 4, "ngFor", "ngForOf"], [3, "click"], ["scope", "row"], ["height", "25px", "width", "25px", 3, "src"]],
+    consts: [[1, "container"], [3, "leagueEmitter"], [1, "table", "table-striped"], ["scope", "col"], [3, "click", 4, "ngFor", "ngForOf"], [3, "click"], ["scope", "row"], ["alt", "", "height", "25px", "width", "25px", 3, "src"]],
     template: function SoccerDashboardComponent_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0)(1, "app-navigation", 1);
